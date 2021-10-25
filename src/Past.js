@@ -118,7 +118,27 @@ class More extends Component {
   }
 }
 
-class Past extends Component {
+class Filter extends Component {
+  render () {
+    return (
+      <>
+        <tr style={{height:"6px"}}></tr>
+        <tr>
+          <td colspan="2"></td>
+          <td>Stories from October 24, 2021 (UTC)</td>
+        </tr>
+        <tr style={{height:"9px"}}></tr>
+        <tr>
+          <td colspan="2"></td>
+          <td>Go back a <span class="hnmore"><a href="front?day=2021-10-23">day</a></span>, <span class="hnmore"><a href="front?day=2021-09-24">month</a></span>, or <span class="hnmore"><a href="front?day=2020-10-24">year</a></span>. Go forward a <span class="hnmore"><a href="front?day=2021-10-25">day</a></span>.</td>
+        </tr>
+        <tr style={{height:"14px"}}></tr>
+      </>
+    )
+  }
+}
+
+class Isi extends Component {
   constructor(props) {
     super(props);
 
@@ -134,9 +154,7 @@ class Past extends Component {
   }
 
   render() {
-    const query     = new URLSearchParams(this.props.location.search);
-    const newLocal  = query.get('p');
-    let token       = parseInt(newLocal) - 1;
+    let token = this.props.token;
 
     const {items }  = this.state;
     let awal        = (30 * token) - 1;
@@ -158,6 +176,21 @@ class Past extends Component {
         );
       }) : ''
     );
+  }
+}
+
+class Past extends Component {
+  render() {
+    const query     = new URLSearchParams(this.props.location.search);
+    const newLocal  = query.get('p');
+    let token       = parseInt(newLocal) - 1;
+
+    return (
+      <>
+        <Filter />
+        <Isi token={token}/>
+      </>
+    )
   }
 }
 
