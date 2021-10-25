@@ -103,8 +103,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      items: [],
-      id: []
+      items: []
     };
   }
 
@@ -117,11 +116,11 @@ class Home extends Component {
   render() {
     const query     = new URLSearchParams(this.props.location.search);
     const newLocal  = query.get('p');
-    let token     = parseInt(newLocal) - 1;
+    let token       = parseInt(newLocal) - 1;
 
     const {items }  = this.state;
-    let awal      = (30 * token) - 1;
-    let akhir     = 30 * (token + 1) - 1;
+    let awal        = (30 * token) - 1;
+    let akhir       = 30 * (token + 1) - 1;
     let item        = isNaN(token) ? items.filter((x, y) => y <= 29) : items.filter((x, y) => y > awal && y <= akhir);
     let nomer       = isNaN(token) ? 1 : 1 + (30 * token);
     let nomer_temp  = isNaN(token) ? 1 : 1 + (30 * token);

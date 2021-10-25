@@ -31,13 +31,14 @@ class Main extends Component {
                             <b class="hnname">
                               <NavLink to="/">Hacker News</NavLink>
                             </b>
-                            <span class="topsel">
+                            {/* <span class="topsel"> */}
                               <NavLink to="/New">New</NavLink>
-                            </span> | 
+                            {/* </span>  */}
+                            | 
                             <NavLink to="/Past">Past</NavLink> | 
                             <NavLink to="/Comment">Comments</NavLink> | 
                             <NavLink to="/Ask">Ask</NavLink> | 
-                            <NavLink to="/Show">Show</NavLink> | 
+                            <NavLink to="/Show">Show</NavLink> |
                             <NavLink to="/Job">Jobs</NavLink> | 
                             <a href="submit">submit</a>            
                           </span>
@@ -59,6 +60,7 @@ class Main extends Component {
                     <tbody>
                       <Route exact path="/" component={Home}/>
                       <Route exact path="/Home" component={Home}/>
+                      <Route exact path="/New" component={New}/>
                     </tbody>
                   </table>
                 </td>
