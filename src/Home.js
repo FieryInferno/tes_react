@@ -23,6 +23,17 @@ class Subtitle extends Component {
     }))
   }
 
+  lamaPosting(time) {
+    let waktuSekarang = Date.now();
+    let selisih       = waktuSekarang - time;
+    
+    if (selisih >= 0 && selisih < 60) {
+      return (`${String(selisih)} seconds ago`);
+    } else if (selisih >= 60 && selisih < 3600) {
+      return (`${String(selisih / 60)} minutes ago`);
+    }
+  }
+
   render() {
     const {score, by, time, descendants }  = this.state;
     return (
@@ -30,7 +41,7 @@ class Subtitle extends Component {
         <td colspan="2"></td>
         <td class="subtext">
           <span class="score" id="score_28976526">{score} points</span> by <a href="user?id=rdpintqogeogsaa" class="hnuser">{by}</a>
-          <span class="age" title="2021-10-24T10:19:21"><a href="item?id=28976526">{time}</a></span>
+          <span class="age" title="2021-10-24T10:19:21"><a href="item?id=28976526">{this.lamaPosting(time)}</a></span>
           <span id="unv_28976526"></span> | <a href="hide?id=28976526&amp;goto=news">hide</a> | <a href="item?id=28976526">{descendants}&nbsp;comments</a>
         </td>
       </tr>
