@@ -32,7 +32,7 @@ class Main extends Component {
                               <NavLink to="/">Hacker News</NavLink>
                             </b>
                             <span class="topsel">
-                              <a href="newest">new</a>
+                              <NavLink to="/New">New</NavLink>
                             </span> | 
                             <NavLink to="/Past">Past</NavLink> | 
                             <NavLink to="/Comment">Comments</NavLink> | 
@@ -58,6 +58,7 @@ class Main extends Component {
                   <table class="itemlist" cellspacing="0" cellpadding="0" border="0">
                     <tbody>
                       <Route exact path="/" component={Home}/>
+                      <Route exact path="/Home" component={Home}/>
                     </tbody>
                   </table>
                 </td>
