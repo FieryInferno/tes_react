@@ -61,6 +61,7 @@ class Main extends Component {
                       <Route exact path="/" component={Home}/>
                       <Route exact path="/Home" component={Home}/>
                       <Route exact path="/New" component={New}/>
+                      <Route exact path="/Past" component={Past}/>
                     </tbody>
                   </table>
                 </td>
